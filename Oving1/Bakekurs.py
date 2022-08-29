@@ -12,14 +12,13 @@ hvetemel = 460 / 48
 print(f"Antall cookies: {n}\nsukker(g): {sukker * n}\nsmør(g): {smor * n}\nsjokolade(g): {sjokolade * n}\negg: {egg * n}\nhvetemel(g):{hvetemel * n}")
 print("\n")
 
-table.append([n, sukker * n, sjokolade * n])
-
 # b)
 print("b\n")
 
 n2 = int(input("og hvor mange cookies vil du lage nå? "))
 n3 = int(input("og hvor mange cookies vil du lage til slutt? "))
 
+table.append([n, sukker * n, sjokolade * n])
 table.append([n2, sukker * n2, sjokolade * n2])
 table.append([n3, sukker * n3, sjokolade * n3])
 

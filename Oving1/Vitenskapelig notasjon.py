@@ -1,15 +1,12 @@
 # a)
 print("a)\n")
+
 stoff = input("Si et stoff du er i besittelse av: ")
 molvekt = float(input("Hva er molvekt i gram for vann? "))
 gram = float(input("Hvor mange gram vann har du? "))
-
 mol = gram / molvekt
 AVOGADRO = 6.022e23
 molekyler = mol * AVOGADRO
-
-print(molekyler)
-
 print(f"Du har {format(molekyler, '.1e')} molekyler {stoff}")
 
 print ("\n")

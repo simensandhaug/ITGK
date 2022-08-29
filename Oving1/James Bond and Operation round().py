@@ -1,6 +1,6 @@
 from math import floor, log10
 # a)
-
+print("a)\n")
 def round_number(n, d):
     return floor((n*10 ** d) + 0.5) / 10 ** d
 
@@ -11,8 +11,10 @@ res_a = int(r_a) if r_a % 1 == 0 else r_a
 d_text = "desimal" if d_a == 1 else "desimaler"
 print(f"Avrundet til {d_a} {d_text}: {res_a}")
 
-# b)
+print("\n")
 
+# b)
+print("b)\n")
 def combine(x, y):
     if y == 0: return x
     return x + y * 10**-(floor(log10(y))+1)
@@ -25,7 +27,10 @@ res_b = int(r_b) if r_b % 1 == 0 else r_b
 d_text = "desimal" if d_b == 1 else "desimaler"
 print(f"{n1_b}.{n2_b} Avrundet til {d_b} {d_text} blir: {res_b}")
 
+print("\n")
+
 # c)
+print("c)\n")
 
 name = input("Jeg heter: ")
 arr = name.split(' ')
