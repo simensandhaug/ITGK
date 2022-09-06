@@ -23,3 +23,9 @@ name_list = [name1, name2]
 print("Her kommer sortert liste: ")
 print(sorted(name_list))    
 
+
+#c)
+
+#Kodesnutt 1: k er større enn b
+#Kodesnutt 2: ny så la
+#Kodesnutt 3: druer
