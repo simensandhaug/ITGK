@@ -1,6 +1,6 @@
-#Python Terminal Sudoku by Simen Sandhaug
+# Python Terminal Sudoku by Simen Sandhaug
 
-#Installation
+# Installation
 
 - Clone into a repository
 - In the terminal create a virtual environment `python -m venv venv` and activate it
