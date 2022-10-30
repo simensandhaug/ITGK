@@ -52,6 +52,8 @@ def validate_move(x, y, n, board):
     row = y
     col = x
     found = []
+    if(len(board[y][x]) == 2):
+        return False
     for dig in board[y]:
         if dig not in found:
             found.append(str(dig)[0])
@@ -105,7 +107,7 @@ while True:
         print(f"\033[93m {n} finnes allerede i den raden, kolonnen eller boksen \033[0m")
         continue
     #Gjør trekket
-    board[y][x] = f"{n}"
+    board[y][x] = f"{n}" if n != 0 else 0
     if(checkWin(board)):
         print_board(board)
         print("Gratulerer du vant!")
