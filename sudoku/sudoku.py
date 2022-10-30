@@ -39,9 +39,10 @@ def print_board(board):
                 tmp += f"\033[91m{c[0]} \033[0m"
             else:
                 tmp += f"\033[94m{c[0]} \033[0m"
-        tmp += "|"
+        tmp += f"| {i}"
         print(tmp)
     print(divider)
+    print(header)
     
 def validate_input(input):
     return True if re.match("^[0-8] [0-8] [0-9]$", input) else False
@@ -52,13 +53,11 @@ def validate_move(x, y, n, board):
     row = y
     col = x
     found = []
-    if(board[y][x] != 0 and len(board[y][x]) == 2):
-        return False
     for dig in board[y]:
         if dig not in found:
             found.append(str(dig)[0])
     for i in range(9):
-        if board[i][x] not in found:
+        if str(board[i][x])[0] not in found:
             found.append(str(board[i][x])[0])
     
     #3x3 boks
@@ -70,9 +69,9 @@ def validate_move(x, y, n, board):
         if( x <= t[0] + 2 and x >= t[0] and y >= t[1] and y <= t[1] + 2):
             i = t[0]
             j = t[1]
-    cube = [board[i+m][j+n] for m in range(3) for n in range(3)]
+    cube = [str(board[j+m][i+n])[0] for m in range(3) for n in range(3)]
     for dig in cube:
-        if dig not in found:
+        if str(dig)[0] not in found:
             found.append(str(dig)[0])
     return not str(n) in found
 
@@ -102,6 +101,9 @@ while True:
     x = int(user_input[0])
     y = int(user_input[1])
     n = int(user_input[2])
+    if(len(str(board[y][x])) == 2):
+        print("\033[93m Kan ikke endre på faste tall \033[0m")
+        continue
     if(not validate_move(x, y, n, board) and n != 0):
         print(f"\033[93m {n} finnes allerede i den raden, kolonnen eller boksen \033[0m")
         continue
@@ -110,6 +112,7 @@ while True:
     if(checkWin(board)):
         print_board(board)
         print("Gratulerer du vant!")
+        save_to_file(board, "last_win")
         break
     
     
