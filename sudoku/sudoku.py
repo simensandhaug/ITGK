@@ -44,7 +44,7 @@ def print_board(board):
     print(divider)
     
 def validate_input(input):
-    return True if re.match("[0-8]( )[0-8]( )[0-9]", input) else False
+    return True if re.match("^[0-8] [0-8] [0-9]$", input) else False
 
 
 def validate_move(x, y, n, board):
@@ -52,7 +52,7 @@ def validate_move(x, y, n, board):
     row = y
     col = x
     found = []
-    if(len(board[y][x]) == 2):
+    if(board[y][x] != 0 and len(board[y][x]) == 2):
         return False
     for dig in board[y]:
         if dig not in found:
@@ -74,7 +74,6 @@ def validate_move(x, y, n, board):
     for dig in cube:
         if dig not in found:
             found.append(str(dig)[0])
-    print(found)
     return not str(n) in found
 
 def checkWin(board):
