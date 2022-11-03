@@ -1,0 +1,18 @@
+[] Programmet må kunne ta inn trekk fra spillerne (tekstbasert).
+[] Programmet skal hindre spillerne i å gjøre ulovlige trekk.*
+[] Programmet skal oppdage og si ifra når en spiller er i sjakk.
+[] Programmet skal oppdage og si ifra når det er sjakkmatt.
+[] Hvis en bonde når andre siden av brettet skal den bli forfremmet til en offiser (dronning, løper, springer eller tårn).
+
+
+[x] a) Velg en måte å representere et sjakkbrett. Vi anbefaler en todimensjonal liste. Velg også hvordan du skal representere en tom rute og at en rute er opptatt av en bestemt brikke.
+[x] b) Initialiser brettet med alle brikkene i sin korrekte startposisjon.
+[x] c) Gjør det mulig å se brikkene på skjermen. Med andre ord skriv en funksjon som printer ut brettet fint til skjermen. For et penere design, kopier og lim inn disse symbolene i koden din: ♖, ♜, ♗, ♝, ♘, ♞, ♕, ♛, ♔, ♚, ♙, ♟
+[] d) Gjør det mulig for en spiller å flytte på en brikke. Hvordan kan du implementere at en brikke tar en annen?
+[] e) Legg til funksjonalitet som sjekker om trekket er lovlig. Gjør dette i flere omganger:
+    [] 1. Er trekket av en gyldig form? (L fasong for springer, diagonalt for løper etc.)
+    [] 2. Er trekket blokkert av en annen brikke?
+    [] 3. Pass på at det ikke er mulig å ta en brikke av din egen farge.
+[] f) Skriv funksjonalitet som tester om kongen er i sjakk. Husk også at det er et ulovlig trekk å sette sin egen konge i sjakk, utvid testene over slik at dette også blir et ugyldig trekk.
+[] g) Skriv funksjonalitet for å sjekke om kongen er i sjakk-matt. (Her kan du gjenbruke kode fra sjakk-testen)
+[] h) Skriv funksjonalitet som oppdager at en bonde er flyttet til andre siden av brettet og la spilleren forfremme bonden til en dronning/tårn/løper/springer.
